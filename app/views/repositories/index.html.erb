@@ -5,7 +5,7 @@
 
   <ul>
     <% @repos.each do |repo| %>
-      <li><%= repo.name %></li>
+      <li><%= repo["name"] %></li>
     <% end %>
   </ul>
   <%= form_tag("/repositories/create", method: "post") do %>

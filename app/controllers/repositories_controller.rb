@@ -7,8 +7,9 @@ class RepositoriesController < ApplicationController
       req.headers['Accept']='application/json'
     end
     @body=JSON.parse(resp.body)
-
-
+    @username=@body["login"]
+    resp1=Faraday.get "https://api.github.com/#{@username}"
+    puts resp1.inspect
   end
 
 

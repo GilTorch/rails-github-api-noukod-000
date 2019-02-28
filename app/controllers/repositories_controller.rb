@@ -9,7 +9,7 @@ class RepositoriesController < ApplicationController
     @body=JSON.parse(resp.body)
     @username=@body["login"]
 
-    resp1=Faraday.get "https://api.github.com/users/GilTorch/repos" do |req|
+    resp1=Faraday.get "https://api.github.com/users/#{@username}/repos" do |req|
       req.headers['Accept']='application/json'
     end
 

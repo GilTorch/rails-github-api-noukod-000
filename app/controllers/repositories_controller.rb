@@ -6,8 +6,6 @@ class RepositoriesController < ApplicationController
       req.params['access_token']="token #{session[:token]}"
       req.headers['Accept']='application/json'
     end
-
-    @body= JSON.parse(resp.body)
     puts @body.inspect
   end
 

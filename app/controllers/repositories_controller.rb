@@ -12,7 +12,7 @@ class RepositoriesController < ApplicationController
       req.headers['Authorization']= 'token '+ session[:token]
       req.headers['Accept']='application/json'
     end
-    puts resp1.inspect
+    puts resp1.body.inspect
   end
 
 

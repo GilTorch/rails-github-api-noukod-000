@@ -9,7 +9,7 @@ class RepositoriesController < ApplicationController
     @body=JSON.parse(resp.body)
     @username=@body["login"]
 
-    resp1=Faraday.get "https://api.github.com/users/#{@username}/repos" do |req|
+    resp1=Faraday.get "https://api.github.com/users/dowpm/repos" do |req|
       req.headers['Authorization']= 'token '+ session[:token]
       req.headers['Accept']='application/json'
     end

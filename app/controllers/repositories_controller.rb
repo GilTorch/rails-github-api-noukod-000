@@ -13,6 +13,7 @@ class RepositoriesController < ApplicationController
       req.headers['Accept']='application/json'
     end
 
+    @repos=JSON.parse(resp1.body)
   end
 
 

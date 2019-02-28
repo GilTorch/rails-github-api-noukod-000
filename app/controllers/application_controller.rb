@@ -14,6 +14,7 @@ class ApplicationController < ActionController::Base
     client_secret=ENV["GITHUB_CLIENT_SECRET"]
 
     auth_url="https://github.com/login/oauth/authorize?client_id=#{client_id}&redirect_uri=#{redirect_uri}"
+    puts logged_in?
     redirect_to auth_url unless logged_in?
   end
 

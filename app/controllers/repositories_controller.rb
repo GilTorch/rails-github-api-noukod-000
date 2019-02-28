@@ -9,11 +9,11 @@ class RepositoriesController < ApplicationController
     @body=JSON.parse(resp.body)
     @username=@body["login"]
 
-    # resp1=Faraday.get "https://api.github.com/users/#{@username}/repos" do |req|
-    #   req.headers['Accept']='application/json'
-    # end
-    #
-    # @repos=JSON.parse(resp1.body)
+    resp1=Faraday.get "https://api.github.com/users/#{@username}/repos" do |req|
+      req.headers['Accept']='application/json'
+    end
+
+    @repos=JSON.parse(resp1.body)
   end
 
 
